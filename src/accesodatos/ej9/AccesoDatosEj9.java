@@ -32,27 +32,28 @@ public class AccesoDatosEj9 {
                     + "0-Salir\n");
 
             int i, code, error = 0, edad;
-            String nombreAlumno="";
-
+            String nombreAlumno;
             do {
-                i = scan.nextInt();
+                i = Integer.parseInt(scan.nextLine());
                 switch (i) {
                     case 1:
                         System.out.println("Introduce nombre");
                         nombreAlumno = scan.nextLine();
                         System.out.println("introduce edad");
-                       edad = scan.nextInt();
+                        edad = Integer.parseInt(scan.nextLine());
                         Alumnos.crear(nombreAlumno, edad);
                         break;
                     case 2:
                         Alumnos.mostrarLista();
                         break;
                     case 3:
-                        code = scan.nextInt();
+                        System.out.println("Introduce el codigo del alumno.");
+                        code = Integer.parseInt(scan.nextLine());
                         Alumnos.modificar(code);
                         break;
                     case 4:
-                        code = scan.nextInt();
+                        System.out.println("Introduce el codigo del alumno.");
+                        code = Integer.parseInt(scan.nextLine());
                         Alumnos.eliminar(code);
                         break;
                     case 0:

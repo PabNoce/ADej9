@@ -19,17 +19,18 @@ public class Fichero {
 
     public static void leerFichero() {
         Alumno alumno;
-        File fich = new File("Alumnos.txt");
+        File fich;
+        Scanner sc;
         try {
             String linea;
             String[] lista = new String[3];
-            Scanner sc = new Scanner(fich);
+            fich = new File("Alumnos.txt");
+            sc = new Scanner(fich);
             while (sc.hasNextLine()) {
-
                 linea = sc.nextLine();
                 lista = linea.split(",");
                 alumno = new Alumno(lista[0], Integer.parseInt(lista[1]), Integer.parseInt(lista[2]));
-                Alumnos.añadir(Integer.parseInt(lista[21]), alumno);
+                Alumnos.añadir(Integer.parseInt(lista[2]), alumno);
             }
             sc.close();
         } catch (FileNotFoundException ex) {

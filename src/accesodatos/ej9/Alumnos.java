@@ -55,16 +55,19 @@ public class Alumnos {
         if (alumnos.get(idAlumno) != null) {
             System.out.println("Que deseas modificar?\n1-Nombre\n2-Edad\n3-Codigo\n");
             Scanner scan = new Scanner(System.in);
-            int i = scan.nextInt();
+            int i = Integer.parseInt(scan.nextLine());
             switch (i) {
                 case 1:
+                    System.out.println("Introduce nuevo nombre");
                    alumnos.get(idAlumno).setNombre(scan.nextLine());
                     break;
                 case 2:
-                    alumnos.get(idAlumno).setEdad(scan.nextInt());
+                    System.out.println("Introduce nueva edad");
+                    alumnos.get(idAlumno).setEdad(Integer.parseInt(scan.nextLine()));
                     break;
                 case 3:
-                    alumnos.get(idAlumno).setCodigo(scan.nextInt());
+                    System.out.println("Introduce nuevo código");
+                    alumnos.get(idAlumno).setCodigo(Integer.parseInt(scan.nextLine()));
                     break;
                 default:
                     break;
